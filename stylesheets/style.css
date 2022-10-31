@@ -34,6 +34,7 @@ nav {
   justify-content: center;
   backdrop-filter: blur(2px);
   text-align: center;
+  z-index: 1000;
 }
 .update-belt-container-form {
   width: 100vw;
@@ -47,6 +48,7 @@ nav {
   justify-content: center;
   backdrop-filter: blur(2px);
   text-align: center;
+  z-index: 1000;
 }
 .controls-form {
   width: 90%;
@@ -86,7 +88,10 @@ nav {
 .table {
   width: 1200px !important;
   text-align: center;
-
   align-items: center;
   justify-content: space-between !important;
+}
+
+.header-tab th{
+  text-align: center;
 }

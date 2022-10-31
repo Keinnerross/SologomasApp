@@ -26,6 +26,7 @@ const formUpdateContainer = document.querySelector(
 const buttonCloseFormUpdate = document.querySelector(".close-form-update");
 const tablaView = document.querySelector("#view-data-table");
 let idCapture;
+let stockCapture;
 
 buttonCloseFormUpdate.addEventListener("click", () => {
   formUpdateContainer.classList.add("disabled");
@@ -33,11 +34,13 @@ buttonCloseFormUpdate.addEventListener("click", () => {
 
 tablaView.addEventListener("click", (e) => {
   const click = e.target;
-  idCapture = click.parentNode.parentNode.parentNode.id;
+  idCapture = click.parentNode.id;
+  stockCapture = click.id;
 
   if (click.classList.contains("update-btn")) {
     formUpdateContainer.classList.remove("disabled");
     console.log(idCapture);
+    console.log(stockCapture);
   }
 });
 
@@ -50,6 +53,7 @@ form.addEventListener("submit", async (e) => {
   const belt = document.getElementById("belt").value;
   const price = document.getElementById("stock").value;
   const stock = document.getElementById("price").value;
+
   const data = { belt: belt, stock: stock, price: price };
   const json = JSON.stringify(data);
   service.postService(json);
@@ -61,10 +65,17 @@ form.addEventListener("submit", async (e) => {
 
 tablaView.addEventListener("click", (e) => {
   const click = e.target;
-  if (click.classList.contains("delete-btn")) {
+  const deleteProgress = () => {
     console.log("soy el boton");
-    const id = click.parentNode.parentNode.parentNode.id;
+    const id = click.parentNode.id;
+    console.log(id);
     service.deleteService(id);
+  };
+
+  if (click.classList.contains("delete-btn")) {
+    confirm("CUIDADO! Esta a pundo de borrar un item")
+      ? deleteProgress()
+      : console.log("No ha pasado nada (:");
   }
 });
 
@@ -73,12 +84,12 @@ tablaView.addEventListener("click", (e) => {
 const formUpdate = document.getElementById("form-update-belt");
 
 formUpdate.addEventListener("submit", (e) => {
-  const inputUpdate = document.getElementById("stock-update").value;
-  const data = { stock: inputUpdate };
+  const inputEntry = document.getElementById("stock-entry").value;
+  const data = { stock: stockCapture - inputEntry };
   const id = parseInt(idCapture);
   const json = JSON.stringify(data);
   console.log(json, id);
   service.updateBook(json, id);
+  formUpdateContainer.classList.add("disabled");
   e.preventDefault();
 });
-

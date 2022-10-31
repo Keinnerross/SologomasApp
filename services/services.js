@@ -90,9 +90,9 @@ export class BookService {
         method: "DELETE",
       });
       const data = response.json();
-      console.log("Eliminado con éxito");
       const ui = new UI();
       console.log(bookId)
+      console.log(data)
       ui.renderGet();
     } catch {
       console.log("Algo salio mal, no te preocupes, lo resolverás");
