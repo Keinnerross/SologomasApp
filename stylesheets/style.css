@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: red;
+}
+
+nav {
+  color: white;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.add-product-button {
+  cursor: pointer;
+}
+
+.add-belt-container-form {
+  width: 100vw;
+  max-width: 100%;
+  height: 100vh;
+  display: flex;
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(2px);
+  text-align: center;
+}
+.update-belt-container-form {
+  width: 100vw;
+  max-width: 100%;
+  height: 100vh;
+  display: flex;
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(2px);
+  text-align: center;
+}
+.controls-form {
+  width: 90%;
+  height: 50px;
+  text-align: right;
+}
+.controls-form span {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.inputs-form {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: center;
+  gap: 5px;
+}
+.card {
+  width: 400px;
+  height: 400px !important;
+  display: flex;
+  align-items: center;
+}
+
+.disabled {
+  display: none;
+}
+
+.table-container-belts {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.table {
+  width: 1200px !important;
+  text-align: center;
+
+  align-items: center;
+  justify-content: space-between !important;
+}
