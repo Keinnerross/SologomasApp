@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="./stylesheets/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
@@ -12,25 +17,50 @@
     <link rel="stylesheet" href="./datatable//datatable-scripts/datatables.min.css">
     <link rel="stylesheet" href="./datatable//datatable-scripts/Buttons-2.2.3/css/buttons.bootstrap5.min.css">
     <!-- Jquery -->
-
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.3/xlsx.full.min.js"></script>
 
     <title>Sologomas Correas PK</title>
 </head>
 
 <body>
+    <div class="bar-info-container">
+        <div class="bar-info">
+            <!-- Cambiarlos por span tambien en el css -->
+            <div>Acerca de</div>
+            <div>Soporte</div>
+            <div>Versión</div>
+        </div>
+    </div> 
     <header>
         <nav>
-            <div>SoloGomas.spa</div>
-            <div>
+            <span class="logo"></span>
+            <div class="nav-container-buttons">
+                <span class="add-excel-button">Subir Excel</span>
                 <span class="add-product-button">Agregar producto</span>
-                <span>Subir Excel</span>
-                <span>Descargar excel</span>
             </div>
         </nav>
     </header>
-    <h1>Busqueda de correas</h1>
+    <div class="container-complet excel-container-form disabled">
+        <div class="row card inputs-form">
+            <div class="controls-form">
+                <span class="close-form-excel">x</span>
+            </div>
+            <div class="inputs-form">
+                <input id="excel-input" class="form-control" type="file" accept=".xls,.xlsx">
+                <button type="button" id="upload-excel" class="btn btn-primary">Subir</button>
+                <pre id="jsonData"></pre>
+            </div>
+        </div>
+    </div>
+    <div class="container-title">
+        <div class="main-title">
+            <span>Busqueda de correas pk</span>
+        </div>
+
+    </div>
+
     <!-- // Menú Agegar producto manual // -->
-    <div class="add-belt-container-form disabled">
+    <div class="add-belt-container-form container-complet disabled">
         <form id="form-create-belt" class="card">
             <div class="controls-form">
                 <span class="close-form">x</span>
@@ -48,17 +78,16 @@
         </form>
     </div>
     <!-- // Menú Actualizar producto // -->
-    <div class="update-belt-container-form disabled">
+    <div class="update-belt-container-form container-complet disabled">
         <form id="form-update-belt" class="card">
             <div class="controls-form">
                 <span class="close-form-update">x</span>
             </div>
-            <h5>Acutaliza los valores</h5>
             <div class="inputs-form">
-                <h4>Venta</h4>
-                <input id="stock-entry" type="number" maxlength="2" required>
-                <span>Salida</span>
-                <input id="stock-egress" type="number" maxlength="2">
+                <h4>¿Cuantas correas lleva el cliente?</h4>
+                <input id="stock-entry" type="number" maxlength="1">
+                <span>¿O cuantas correas están devolviendo?</span>
+                <input id="stock-egress" type="number" maxlength="1 ">
                 <button class="btn btn-primary">Envíar</button>
             </div>
         </form>
@@ -75,20 +104,30 @@
                 </tr>
             </thead>
             <tbody class="tbody" id="view-data-table">
-
             </tbody>
         </table>
     </div>
+    <footer>
+        <span>Developed with ♥ by @KeinnerRoss</span>
+    </footer>
+    <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.6.1.js"
         integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
         crossorigin="anonymous"></script>
-<script src="./datatable/datatable-scripts/datatables.min.js"></script>
-    <!-- /* My Scripts*/ -->
-    <script src="./main.js" type="module"></script>
 
-    <script src="./datatable/datatable.js"></script>
+    <!-- Sweet alert -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- DataTable -->
+    <script src="./datatable/datatable-scripts/datatables.min.js"></script>
+
+    <!-- /* My Scripts*/ -->
+    <script src="/src/uploadExcel.js" type="module"></script>
+    <script src="./main.js" type="module"></script>
 </body>
 
 </html>

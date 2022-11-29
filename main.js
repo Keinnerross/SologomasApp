@@ -58,6 +58,7 @@ form.addEventListener("submit", async (e) => {
   const json = JSON.stringify(data);
   service.postService(json);
   formCreateContainer.classList.add("disabled");
+  form.reset();
   e.preventDefault();
 });
 
@@ -73,7 +74,7 @@ tablaView.addEventListener("click", (e) => {
   };
 
   if (click.classList.contains("delete-btn")) {
-    confirm("CUIDADO! Esta a pundo de borrar un item")
+    confirm("😲¡CUIDADO! Estas a punto de borrar una correa.")
       ? deleteProgress()
       : console.log("No ha pasado nada (:");
   }
@@ -91,5 +92,21 @@ formUpdate.addEventListener("submit", (e) => {
   console.log(json, id);
   service.updateBook(json, id);
   formUpdateContainer.classList.add("disabled");
+  formUpdate.reset();
   e.preventDefault();
+});
+
+
+
+
+const buttonCloseFormExcel = document.querySelector(".close-form-excel");
+const buttonOpenFromExcel = document.querySelector(".add-excel-button");
+const formExcelContainer = document.querySelector(".excel-container-form");
+
+buttonCloseFormExcel.addEventListener("click", () => {
+  formExcelContainer.classList.add("disabled");
+});
+
+buttonOpenFromExcel.addEventListener("click", () => {
+  formExcelContainer.classList.remove("disabled");
 });

@@ -1,14 +1,36 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: "poppins", sans-serif;
 }
-
+.bar-info-container {
+  background-color: red;
+}
+.bar-info {
+  height: 40px;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: white;
+}
+.bar-info div {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  cursor: pointer;
+}
+.bar-info div:hover {
+  height: 100%;
+  background-color: rgb(193, 7, 7);
+}
 header {
   height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: red;
+  background: rgb(14, 14, 33);
 }
 
 nav {
@@ -17,12 +39,20 @@ nav {
   display: flex;
   justify-content: space-between;
 }
+.nav-container-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-container-buttons span {
+  padding: 0 7px;
+}
 
 .add-product-button {
   cursor: pointer;
 }
 
-.add-belt-container-form {
+.container-complet {
   width: 100vw;
   max-width: 100%;
   height: 100vh;
@@ -36,20 +66,7 @@ nav {
   text-align: center;
   z-index: 1000;
 }
-.update-belt-container-form {
-  width: 100vw;
-  max-width: 100%;
-  height: 100vh;
-  display: flex;
-  position: fixed;
-  top: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  backdrop-filter: blur(2px);
-  text-align: center;
-  z-index: 1000;
-}
+
 .controls-form {
   width: 90%;
   height: 50px;
@@ -86,12 +103,80 @@ nav {
 }
 
 .table {
-  width: 1200px !important;
+  min-width: 75vw;
   text-align: center;
   align-items: center;
   justify-content: space-between !important;
 }
 
-.header-tab th{
+.header-tab th {
   text-align: center;
+}
+
+.header-tab th {
+  text-align: center !important;
+}
+.add-excel-button {
+  cursor: pointer;
+}
+
+footer {
+  padding-top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer span {
+  width: 80%;
+}
+
+.logo {
+  width: 200px;
+  height: 50px;
+  background-image: url("/src/images/logo.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  transition: 0.7s;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  transition: 2s;
+}
+
+thead {
+  background-color: red !important;
+  color: white;
+}
+
+.delete-btn {
+  color: rgba(128, 128, 128, 0.208);
+  cursor: pointer;
+}
+
+.container-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 0;
+}
+
+.main-title {
+  width: 75vw;
+  text-transform: uppercase;
+  font-size: 40px;
+}
+
+
+.belt-container{
+  text-transform: uppercase;
+}
+
+.stock-container::after{
+  content:" disponibles"
+}
+
+.price-container::before{
+  content:"$"
 }

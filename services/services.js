@@ -26,18 +26,7 @@ export class BookService {
     console.log(data);
   }
 
-  /*Servicio de Borrado */
-
-  // export class BookService {
-  //     constructor() {
-  //       this.URL = "https://api-heros-production.up.railway.app/api/heros";
-  //     }
-
-  //     async getBook() {
-  //       const response = await fetch(this.URL);
-  //       const books = await response.json();
-  //       console.log(books);
-  //     }
+  /*Servicio de Actualización*/
   async updateBook(book, bookId) {
     try {
       const response = await fetch(`${this.url}/${bookId}`, {
@@ -54,36 +43,8 @@ export class BookService {
       console("¡Ya casi lo logras! ¡¡¡VAMOOOOOS!!!!");
     }
   }
-  //     async postBook(book) {
-  //       try {
-  //         const response = await fetch(this.URL, {
-  //           method: "POST",
-  //           headers: { "Content-Type": "application/json" },
-  //           body: book,
-  //         });
-  //       } catch (error) {
-  //         console.log(error);
-  //         console.log(book);
-  //       }
-  //     }
 
-  //     async deleteBook(bookId) {
-  //       try {
-  //         const response = await fetch(`${this.URL}/${bookId}`, {
-  //           headers: {
-  //             "Content-Type": "application/json",
-  //           },
-  //           method: "DELETE",
-  //         });
-  //         const data = await response.json();
-  //         console.log(data);
-  //       } catch {
-  //         console.log("Algo salio mal, no te preocupes, lo resolverás.");
-  //       }
-  //     }
-  //   }
-  //}
-
+  /*Servicio de Borrado*/
   async deleteService(bookId) {
     try {
       const response = await fetch(`${this.url}/${bookId}`, {
@@ -91,11 +52,27 @@ export class BookService {
       });
       const data = response.json();
       const ui = new UI();
-      console.log(bookId)
-      console.log(data)
+      console.log(bookId);
+      console.log(data);
       ui.renderGet();
     } catch {
       console.log("Algo salio mal, no te preocupes, lo resolverás");
     }
   }
+
+  async deleteAllService() {
+    try {
+      const response = await fetch(`${this.url}`, {
+        method: "DELETE",
+      });
+      const data = response.json();
+      console.log(data);
+      console.log("Se ejecuto AllDelete")
+      
+    } catch {
+      console.log("Algo salio mal, no te preocupes, lo resolverás");
+    }
+  }
 }
+
+/*Borrar Todo */
