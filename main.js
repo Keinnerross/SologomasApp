@@ -10,6 +10,7 @@ window.addEventListener("DOMContentLoaded", ui.renderGet());
 const buttonCloseForm = document.querySelector(".close-form");
 const buttonOpenFrom = document.querySelector(".add-product-button");
 const formCreateContainer = document.querySelector(".add-belt-container-form");
+const inputEntry = document.getElementById("stock-entry");
 
 buttonCloseForm.addEventListener("click", () => {
   formCreateContainer.classList.add("disabled");
@@ -36,9 +37,9 @@ tablaView.addEventListener("click", (e) => {
   const click = e.target;
   idCapture = click.parentNode.id;
   stockCapture = click.id;
-
   if (click.classList.contains("update-btn")) {
     formUpdateContainer.classList.remove("disabled");
+    inputEntry.focus();
     console.log(idCapture);
     console.log(stockCapture);
   }
@@ -85,8 +86,8 @@ tablaView.addEventListener("click", (e) => {
 const formUpdate = document.getElementById("form-update-belt");
 
 formUpdate.addEventListener("submit", (e) => {
-  const inputEntry = document.getElementById("stock-entry").value;
-  const data = { stock: stockCapture - inputEntry };
+  const inputValueBelt = inputEntry.value;
+  const data = { stock: stockCapture - inputValueBelt };
   const id = parseInt(idCapture);
   const json = JSON.stringify(data);
   console.log(json, id);
@@ -95,9 +96,6 @@ formUpdate.addEventListener("submit", (e) => {
   formUpdate.reset();
   e.preventDefault();
 });
-
-
-
 
 const buttonCloseFormExcel = document.querySelector(".close-form-excel");
 const buttonOpenFromExcel = document.querySelector(".add-excel-button");
@@ -110,3 +108,5 @@ buttonCloseFormExcel.addEventListener("click", () => {
 buttonOpenFromExcel.addEventListener("click", () => {
   formExcelContainer.classList.remove("disabled");
 });
+
+/********History Logic******/

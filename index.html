@@ -10,7 +10,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
+
     <link rel="stylesheet" href="./stylesheets/style.css">
+    <link rel="stylesheet" href="./stylesheets/history.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <!-- Datatable styles -->
@@ -18,6 +20,11 @@
     <link rel="stylesheet" href="./datatable//datatable-scripts/Buttons-2.2.3/css/buttons.bootstrap5.min.css">
     <!-- Jquery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.3/xlsx.full.min.js"></script>
+
+
+    <!-- My Styles -->
+
+
 
     <title>Sologomas Correas PK</title>
 </head>
@@ -30,7 +37,7 @@
             <div>Soporte</div>
             <div>Versión</div>
         </div>
-    </div> 
+    </div>
     <header>
         <nav>
             <span class="logo"></span>
@@ -77,17 +84,17 @@
             </div>
         </form>
     </div>
+
     <!-- // Menú Actualizar producto // -->
     <div class="update-belt-container-form container-complet disabled">
-        <form id="form-update-belt" class="card">
+        <form id="form-update-belt">
             <div class="controls-form">
                 <span class="close-form-update">x</span>
             </div>
             <div class="inputs-form">
+                <div class="belt-image"></div>
                 <h4>¿Cuantas correas lleva el cliente?</h4>
                 <input id="stock-entry" type="number" maxlength="1">
-                <span>¿O cuantas correas están devolviendo?</span>
-                <input id="stock-egress" type="number" maxlength="1 ">
                 <button class="btn btn-primary">Envíar</button>
             </div>
         </form>
@@ -107,6 +114,36 @@
             </tbody>
         </table>
     </div>
+
+    <!--//  Apartado de Historial// -->
+
+    <div class="history-button"><span>H</span></div>
+
+
+    <div class="history-container hidden">
+        <div class="background-history-container">
+            <div class="history-content">
+                <section class="history-header">
+                    <h1> Historial de Ventas</h1>
+                </section>
+                <section class="history-list">
+                    <ul>
+                        <div class="venta-container">Correa</div>
+                        <div class="venta-container">Correa</div>
+                        <div class="venta-container">Correa</div>
+                        <div class="venta-container">Correa</div>
+                    </ul>
+                </section>
+                <section class="history-controls">
+                    <button>Vaciar</button>
+                    <button class="back-history">Atrás</button>
+                </section>
+            </div>
+        </div>
+
+    </div>
+
+
     <footer>
         <span>Developed with ♥ by @KeinnerRoss</span>
     </footer>
@@ -128,6 +165,7 @@
     <!-- /* My Scripts*/ -->
     <script src="/src/uploadExcel.js" type="module"></script>
     <script src="./main.js" type="module"></script>
+    <script src="./history.js" type="module"></script>
 </body>
 
 </html>
