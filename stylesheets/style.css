@@ -191,16 +191,17 @@ thead {
   width: 75vw;
   text-transform: uppercase;
   font-size: 40px;
+  color: #e62034;
 }
 
 .belt-container {
   text-transform: uppercase;
 }
 
-.stock-container::after {
+/* .stock-container::after {
   content: " disponibles";
-}
-
+} */
+/* 
 .price-container::before {
   content: "$";
-}
+} */
