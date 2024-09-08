@@ -39,8 +39,8 @@ export class BookService {
       console.log(data);
       const ui = new UI();
       ui.renderGet();
-    } catch {
-      console("¡Ya casi lo logras! ¡¡¡VAMOOOOOS!!!!");
+    } catch(e){
+      console(e);
     }
   }
 
@@ -55,8 +55,8 @@ export class BookService {
       console.log(bookId);
       console.log(data);
       ui.renderGet();
-    } catch {
-      console.log("Algo salio mal, no te preocupes, lo resolverás");
+    } catch(e) {
+      console.log(e);
     }
   }
 
@@ -66,11 +66,9 @@ export class BookService {
         method: "DELETE",
       });
       const data = response.json();
-      console.log(data);
-      console.log("Se ejecuto AllDelete")
       
-    } catch {
-      console.log("Algo salio mal, no te preocupes, lo resolverás");
+    } catch(e) {
+      console.log(e)
     }
   }
 }

@@ -7,6 +7,8 @@ const t = $("#table-belts").DataTable({
   ],
   dom: "Bftrip",
   buttons: ["copy", "csv", "excel"],
+  paging: false, // Desactiva la paginación
+
   language: {
     lengthMenu: "Display _MENU_ records per page",
     zeroRecords: "No hay ningún resultado 😖",
@@ -22,6 +24,8 @@ export class UI {
     const service = new BookService();
     // const get = await service.getService();
 
+
+    //A modo de ejemplo toma este array de obj para renderizar.
     const get = [
       {
         belt: "4pk890",

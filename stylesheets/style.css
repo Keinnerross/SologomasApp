@@ -3,9 +3,11 @@
   padding: 0;
   font-family: "poppins", sans-serif;
 }
+
 .bar-info-container {
   background-color: red;
 }
+
 .bar-info {
   height: 40px;
   width: 90%;
@@ -14,6 +16,7 @@
   justify-content: flex-end;
   color: white;
 }
+
 .bar-info div {
   height: 100%;
   display: flex;
@@ -21,10 +24,12 @@
   padding: 0 10px;
   cursor: pointer;
 }
+
 .bar-info div:hover {
   height: 100%;
   background-color: rgb(193, 7, 7);
 }
+
 header {
   height: 80px;
   display: flex;
@@ -39,11 +44,14 @@ nav {
   display: flex;
   justify-content: space-between;
 }
+
 .nav-container-buttons {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
+
 .nav-container-buttons span {
   padding: 0 7px;
 }
@@ -73,6 +81,7 @@ nav {
   height: 20px;
   text-align: right;
 }
+
 .controls-form span {
   font-size: 20px;
   cursor: pointer;
@@ -110,6 +119,7 @@ nav {
 .inputs-form h4 {
   text-align: center;
 }
+
 .card {
   width: 400px;
   height: 400px !important;
@@ -129,18 +139,29 @@ nav {
 
 .table {
   min-width: 75vw;
-  text-align: center;
+
   align-items: center;
   justify-content: space-between !important;
 }
 
-.header-tab th {
-  text-align: center;
-}
+/* .button-container {
+  display: flex;
+  justify-content: center;
+} */
+
+
+.header-tab th {}
 
 .header-tab th {
-  text-align: center !important;
+  padding-left: 100px !important;
 }
+
+td {
+  padding-left: 100px !important;
+  padding-top: 25px !important;
+}
+
+
 .add-excel-button {
   cursor: pointer;
 }
@@ -151,6 +172,7 @@ footer {
   align-items: center;
   justify-content: center;
 }
+
 footer span {
   width: 80%;
 }
